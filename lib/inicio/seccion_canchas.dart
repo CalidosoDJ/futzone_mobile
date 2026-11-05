@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../tema/colores_aplicacion.dart';
 import '../canchas/datos_canchas.dart';
 import '../canchas/tarjeta_cancha.dart';
+import '../canchas/pantalla_detalle_cancha.dart';
 
 class SeccionCanchas extends StatelessWidget {
   const SeccionCanchas({super.key});
@@ -70,21 +71,11 @@ class SeccionCanchas extends StatelessWidget {
                   child: TarjetaCancha(
                     cancha: canchas[index],
                     alPulsar: () {
-                      showDialog<void>(
-                        context: context,
-                        builder: (contexto) => AlertDialog(
-                          title: const Text('Inicia sesión'),
-                          content: const Text(
-                            'Para consultar los detalles de esta cancha, '
-                            'primero debes iniciar sesión o registrarte '
-                            'en FutZone.',
-                          ),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.pop(contexto),
-                              child: const Text('Entendido'),
-                            ),
-                          ],
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              PantallaDetalleCancha(cancha: canchas[index]),
                         ),
                       );
                     },

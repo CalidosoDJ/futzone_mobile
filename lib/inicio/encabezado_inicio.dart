@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../tema/colores_aplicacion.dart';
+import '../canchas/pantalla_explorar_canchas.dart';
 
 class EncabezadoInicio extends StatelessWidget implements PreferredSizeWidget {
   const EncabezadoInicio({super.key});
@@ -64,12 +65,10 @@ class EncabezadoInicio extends StatelessWidget implements PreferredSizeWidget {
             }
 
             if (opcion == 'canchas') {
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text(
-                    'Desliza hacia abajo para explorar las canchas.',
-                  ),
-                  duration: Duration(seconds: 2),
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PantallaExplorarCanchas(),
                 ),
               );
             }
