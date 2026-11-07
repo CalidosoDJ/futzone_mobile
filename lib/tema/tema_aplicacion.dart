@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'colores_aplicacion.dart';
 
 abstract final class TemaAplicacion {
   static ThemeData get temaClaro {
     return ThemeData(
       useMaterial3: true,
+      fontFamily: GoogleFonts.plusJakartaSans().fontFamily,
       scaffoldBackgroundColor: ColoresAplicacion.background,
 
       colorScheme: ColorScheme.fromSeed(
@@ -37,7 +39,7 @@ abstract final class TemaAplicacion {
         style: ElevatedButton.styleFrom(
           backgroundColor: ColoresAplicacion.primary,
           foregroundColor: ColoresAplicacion.surface,
-          minimumSize: const Size.fromHeight(52),
+          minimumSize: const Size(0, 52),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),

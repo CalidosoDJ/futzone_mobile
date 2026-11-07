@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../tema/colores_aplicacion.dart';
+import '../modules/jugador/inicio/dashboard.dart';
 import 'pantalla_registro.dart';
 
 class PantallaInicioSesion extends StatefulWidget {
@@ -40,6 +41,13 @@ class _PantallaInicioSesionState extends State<PantallaInicioSesion> {
         ),
         behavior: SnackBarBehavior.floating,
       ),
+    );
+  }
+
+  void _abrirDashboardPrueba() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const PantallaInicioJugador()),
     );
   }
 
@@ -259,6 +267,7 @@ class _PantallaInicioSesionState extends State<PantallaInicioSesion> {
 
                     const SizedBox(height: 30),
 
+                    // Botón principal: autenticación pendiente
                     SizedBox(
                       height: 52,
                       child: ElevatedButton(
@@ -277,6 +286,31 @@ class _PantallaInicioSesionState extends State<PantallaInicioSesion> {
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(height: 16),
+
+                    // Acceso temporal para probar el Dashboard
+                    OutlinedButton.icon(
+                      onPressed: _abrirDashboardPrueba,
+                      icon: const Icon(Icons.dashboard_outlined, size: 20),
+                      label: const Text(
+                        'Ver Dashboard (prueba)',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: ColoresAplicacion.primary,
+                        minimumSize: const Size.fromHeight(48),
+                        side: const BorderSide(
+                          color: ColoresAplicacion.primary,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
                         ),
                       ),
                     ),
