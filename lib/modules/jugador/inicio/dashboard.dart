@@ -5,6 +5,8 @@ import '../../../canchas/pantalla_explorar_canchas.dart';
 import '../../../canchas/datos_canchas.dart';
 import '../../../canchas/pantalla_detalle_cancha.dart';
 import '../../../reservas/pantalla_mis_reservas.dart';
+import '../perfil/pantalla_perfil.dart';
+import '../../../mapa/pantalla_mapa.dart';
 
 class PantallaInicioJugador extends StatefulWidget {
   const PantallaInicioJugador({super.key});
@@ -18,7 +20,6 @@ class _PantallaInicioJugadorState extends State<PantallaInicioJugador> {
 
   final String _imagenHero =
       'https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=800&auto=format&fit=crop';
-  
 
   @override
   Widget build(BuildContext context) {
@@ -1085,6 +1086,20 @@ class _PantallaInicioJugadorState extends State<PantallaInicioJugador> {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (_) => const PantallaMisReservas()),
+          );
+          return;
+        }
+        if (index == 3) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const PantallaMapa()),
+          );
+          return;
+        }
+        if (index == 4) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const PantallaPerfil()),
           );
           return;
         }
